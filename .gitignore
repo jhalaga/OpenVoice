@@ -1,3 +1,10 @@
 __pycache__/
+.ipynb_checkpoints/
+processed
+outputs
 checkpoints
+checkpoints.7z
+checkpoints.zip
+trash
+examples*
 .env

@@ -1,0 +1,17 @@
+git clone https://github.com/myshell-ai/OpenVoice.git
+cd OpenVoice 
+python3 -m venv openvoice
+source openvoice/bin/activate
+pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1
+pip install -r requirements.txt
+pip install -U torch torchvision torchaudio git+https://github.com/violetdenim/wavmark.git
+
+
+apt-get update
+apt-get install unzip ffmpeg
+wget https://myshell-public-repo-hosting.s3.amazonaws.com/checkpoints_1226.zip
+unzip checkpoints_1226.zip
+cp -r checkpoints checkpoints2
+rm -rf checkpoints
+# change checkpoints to checkpoints2 in openvoice_app.py, demo_part2.ipynb, demo_part1.ipynb
+python -m openvoice_app --share
